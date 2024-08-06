@@ -124,30 +124,29 @@ const Manager = () => {
             />
             {/* Same as */}
             <ToastContainer />
-            <div className="absolute inset-0 -z-10 h-full w-full bg-green-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-green-400 opacity-20 blur-[100px]"></div></div>
-            <div className=" p-3 md:mycontainer min-h-[88.2vh] ">
+            <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>            <div className=" p-3 md:mycontainer min-h-[88.2vh] ">
                 <h1 className='text-4xl text font-bold text-center'>
-                    <span className='text-green-500'> &lt;</span>
+                    <span className='text-purple-500'> &lt;</span>
 
-                    <span>Pass</span><span className='text-green-500'>OP/&gt;</span>
+                    <span>Safe</span><span className='text-purple-500'>Pass/&gt;</span>
 
                 </h1>
-                <p className='text-green-900 text-lg text-center'>Your own Password Manager</p>
+                <p className='text-purple-900 text-lg text-center'>Your own Password Manager</p>
 
                 <div className="flex flex-col p-4 text-black gap-8 items-center">
-                    <input value={form.site} onChange={handleChange} placeholder='Enter website URL' className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name="site" id="site" />
+                    <input value={form.site} onChange={handleChange} placeholder='Enter website URL' className='rounded-full border border-black w-full p-4 py-1' type="text" name="site" id="site" />
                     <div className="flex flex-col md:flex-row w-full justify-between gap-8">
-                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name="username" id="username" />
+                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-black w-full p-4 py-1' type="text" name="username" id="username" />
                         <div className="relative">
 
-                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-green-500 w-full p-4 py-1' type="password" name="password" id="password" />
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-black w-full p-4 py-1' type="password" name="password" id="password" />
                             <span className='absolute right-[3px] top-[4px] cursor-pointer' onClick={showPassword}>
                                 <img ref={ref} className='p-1' width={26} src="icons/eye.png" alt="eye" />
                             </span>
                         </div>
 
                     </div>
-                    <button onClick={savePassword} className='flex justify-center items-center gap-2 bg-green-400 hover:bg-green-300 rounded-full px-8 py-2 w-fit border border-green-900'>
+                    <button onClick={savePassword} className='inline-flex h-12 items-center justify-center rounded-md border border-gray-800 bg-gradient-to-t from-[#8678f9] from-0% to-[#c7d2fe] px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 '>
                         <lord-icon
                             src="https://cdn.lordicon.com/jgnvfzqg.json"
                             trigger="hover" >
@@ -159,7 +158,7 @@ const Manager = () => {
                     <h2 className='font-bold text-2xl py-4'>Your Passwords</h2>
                     {passwordArray.length === 0 && <div> No passwords to show</div>}
                     {passwordArray.length != 0 && <table className="table-auto w-full rounded-md overflow-hidden mb-10">
-                        <thead className='bg-green-800 text-white'>
+                        <thead className='bg-purple-800 text-white'>
                             <tr>
                                 <th className='py-2'>Site</th>
                                 <th className='py-2'>Username</th>
@@ -167,7 +166,7 @@ const Manager = () => {
                                 <th className='py-2'>Actions</th>
                             </tr>
                         </thead>
-                        <tbody className='bg-green-100'>
+                        <tbody className='bg-purple-100'>
                             {passwordArray.map((item, index) => {
                                 return <tr key={index}>
                                     <td className='py-2 border border-white text-center'>
